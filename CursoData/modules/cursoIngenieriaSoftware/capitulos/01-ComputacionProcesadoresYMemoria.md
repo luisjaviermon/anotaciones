@@ -68,3 +68,19 @@ Dentro de la cpu se tiene una memoria de gran velocidad llamada cache, en el cua
 Las memorias RAM tienen el beneficio de compartir un indice que nos dicen las ubicaciones en la memoria donde hay datos (direccion de memoria). Estas direcciones de memoria trabajan de forma tal que el acceso a cualquier direccion de memoria se tarda lo mismo.
 
 Para compartir informacion se requieren de cables o circuitos que reciben el nombre de bus de datos 
+
+## GPU
+Es una tarjeta de video, el cual recibe instrucciones que esta conectado al CPU mediante un bus (PCI express) en caso de que el gpu este integrado en el cpu se hace con un chip
+
+En el caso de una GPU cuenta con x Ghz y tambien con cierta cantidad de cores, los cuales son mayores debido a que la GPU trbaja en paralelo para mostrar al mismo tiempo algo en cierta parte de la pantalla
+
+## Perifericos 
+Dentro de un equipo, al momento de iniciarse, lo primero que se carga es el kernel (codigo que tiene acceso a todo). Posterior al kernel se carga mas sw utilitario que nos permite tener un control de ciertas operaciones, y estas se dividen en anillos:
+
+  * Anillo 1: drives del equipo
+  * Anillo 2: drives de ciertas aplicaciones
+  * Anillo 3: aplicaciones
+
+Al estar mas alejado del kernel, menos privilegios tendra el programa y este debera siempre solicitarlos
+
+En el caso de las aplicaciones, puede que estas necesiten el uso de algun periferico o elemento del equipo. Para esto, la aplicacion pide permisos a alguno de los anillos donde se encuentra el elemento necesario.
