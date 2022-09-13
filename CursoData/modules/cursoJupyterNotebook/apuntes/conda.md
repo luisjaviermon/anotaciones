@@ -81,3 +81,15 @@ conda env export --no-builds|--from-history --file [nombre_archivo]
 conda env create --file [ruta_archivo]
 ```
 NOTA: La extension para poder instalar ambientes desde archivo es .yml
+
+### Mamba
+Mamba es una optimizacion que permite la creacion y resolucion de dependencias en forma paralela, esto con el fin de hacerlo mas rapido. Para instalar mamba usamos 
+
+```bash
+conda install --channel conda-forge mamba
+```
+
+### Divide y venceras
+Es el uso de la estrategia en la cual se divide una gran tarea en tareas mas pequeñas.
+Dentro de el uso de ambientes es posible el dividir las dependencias en ambientes distintos con el fin de que si es necesario actualizar algun paquete, los demas no se vean afectados con esta actualizacion.
+Una herramienta muy util en anaconda para poder ejecutar un proyecto con distintos ambientes es snakemate
