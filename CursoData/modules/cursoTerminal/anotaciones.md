@@ -56,3 +56,14 @@ rm -rfi [directorio]
 ~~~
 __Nota__: Para eliminar un archivo con el uso de la bandera _-i_ se debe colocar "y"
 
+### Explorar el contenido de archivos 
+~~~bash
+#Muestra las primeras n lineas de un archivo
+head [nombre_archivo] -n 15
+#Muestra las ultimas n lineas de un archivo
+tail [nombre_archivo] -n 20
+#Mostrar todo el contenido de forma interactiva
+less [nombre_archivo]
+#Abrir un archivo con la aplicacion determinada
+xdg-open [nombre_archivo]
+~~~
