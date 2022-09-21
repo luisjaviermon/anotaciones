@@ -67,3 +67,15 @@ less [nombre_archivo]
 #Abrir un archivo con la aplicacion determinada
 xdg-open [nombre_archivo]
 ~~~
+
+## Wildcards
+Permiten una busqueda mas eficiente de archivos en base a ciertas caracteristicas
+
+son similares a la aplicacion de expresiones regulares pero para buscar ciertos formatos de archivos
+
+  - cadena* - busca todo lo que llebe en un inicio la palabra cadena
+  - cadena? - permite buscar todos los archivos que despues de cadena tengan un solo caracter
+  - [] - esta es una busqueda por clases. en las cuales podemos englobar ciertos caracteres especificos
+  __NOTA__: dentro de las clases podemos colocar ciertas caracteristicas especiales dentro de la busqueda, por ejemplo:
+    
+    * [[:upper:]]*: permite buscar archivos que inicien con una letra mayuscula   
