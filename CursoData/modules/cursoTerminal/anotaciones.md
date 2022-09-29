@@ -79,3 +79,69 @@ son similares a la aplicacion de expresiones regulares pero para buscar ciertos 
   __NOTA__: dentro de las clases podemos colocar ciertas caracteristicas especiales dentro de la busqueda, por ejemplo:
     
     * [[:upper:]]*: permite buscar archivos que inicien con una letra mayuscula   
+
+## Links simbolicos
+Los enlaces simbolicos son un tipo de archivo que hace referencia a un lugar, similar a un acceso directo
+~~~bash
+ln -s [ruta]
+~~~
+En si un link simbolico no tiene permisos
+
+## Variables de entorno
+las variables de entorno son elementos que nos permitener tener acceso a rutas especificas con el fin de poder configurar 
+Un comanto para ver todas las variables de entorno es `printenv`
+
+Algunas de las variables mas importantes son:
+  - $HOME: indica cual es nuestra ruta home
+  - $PATH: contiene todas las rutas de los binarios que ejecuta el sistema
+
+para modificar las variables de entorno a nivel local creando alias o modificando variables de entorno se edita el documento .bashrc; ya modificado se debe de usar el comando `bash`
+
+## Busqueda de archivos
+Para encontrar la ruta de un ejecutable
+~~~bash
+which [ejecutable]
+~~~
+
+para buscar un archivo se usa el comando file
+~~~bash
+#busca el nombre de un archivo
+find [ruta] -name [nombre_archivo]
+
+#Buscar por tipo de archivo
+find [ruta] -type [f|d] -name [nombre_archivo]
+
+#Buscar archivo por un tamaño mayor a
+find [ruta] -size [tamaño]
+~~~
+
+algo util del comando es que permite el uso de wildcards
+
+## Busqueda dentro de texto
+Para buscar coincidencias dentro de algun texto se usa el comando `grep`
+
+~~~bash
+grep [expresion_regular] [ruta_archivo]
+
+#ignorando mayusculas y minusculas
+grep -i [expresion_regular] [ruta_archivo]
+
+#contabilizar las coincidencias
+grep -c [expresion_regular] [ruta_archivo]
+
+#obtener las cadenas que no coincidan con la expresion
+grep -v [expresion_regular] [ruta_archivo]
+~~~
+
+Para obtener las estadisticas de algun archivo usamos `wc`
+
+~~~bash
+#La salida la estructura como numeroLineas numeroPalabras numeroBits
+wc [ruta_archivo]
+
+#para solo obtener una estadistica se usa
+#-l -> solo numero de lineas
+#-w -> solo numero de palabras
+#-c -> solo numero de bits
+wc -[l|w|c] [ruta_archivo]
+~~~

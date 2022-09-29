@@ -1,0 +1,5 @@
+./dot2.txt
+./folder/hola.txt
+./dot.txt
+./file.txt
+./misArchivos.txt
