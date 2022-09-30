@@ -145,3 +145,64 @@ wc [ruta_archivo]
 #-c -> solo numero de bits
 wc -[l|w|c] [ruta_archivo]
 ~~~
+
+## Utilidades de red
+para ver la informacion de la red se usa el comando `ifconfig`
+
+si se desea ver una prueba para la conexion a cierta pagina se usa 
+~~~bash
+ping [direccion_ip_o_web]
+~~~
+
+si se desea enciar o recibir contenido de la web en forma de texto se usa curl
+~~~bash
+curl [direccion_recurso] > archivo_destino
+~~~
+
+para descargar cualquier contenido se usa wget
+~~~bash
+wget [direccion_recurso]
+~~~
+
+Para indicar con detalle el proceso de conexion a una pagina o recurso se usa 
+~~~bash
+traceroute [direccion_destino]
+~~~
+
+Si se desea mostrar todos los dispositivos de red dentro del equipo se usa
+~~~bash
+netstat
+~~~
+
+## Compresion de archivos
+### Formato tar
+#### Comprimir archivo
+~~~bash
+tar -cvf [archivo_comprimido].tar [carpeta_a_comprimir]
+~~~
+
+### Compresion en gzip
+Esta compresion es muy util para comprimir archivos de texto plano
+~~~bash
+tar -cvzf [archivo_comprimido].tar.gz [carpeta_a_comprimir]
+~~~
+
+### Descomprimir un archivo .tar
+~~~bash
+tar -xvf [archivo_comprimido].tar
+~~~
+
+### Descomprimir un archivo .tar.gz
+~~~bash
+tar -xvzf [archivo_comprimido].tar.gz
+~~~
+
+#### Compresion en zip
+~~~bash
+zip -r [carpeta] [nombre_archivo comprimido].zip
+~~~
+
+### Descomprimir un zip
+~~~bash
+unzip [archivo_comprimido].zip
+~~~
