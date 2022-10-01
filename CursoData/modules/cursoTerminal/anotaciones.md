@@ -206,3 +206,29 @@ zip -r [carpeta] [nombre_archivo comprimido].zip
 ~~~bash
 unzip [archivo_comprimido].zip
 ~~~
+
+## Manejo de procesos
+Para poder ver los procesos que se estan ejecutando se usa el comando `ps`
+
+Para terminar un proceso se usa
+~~~bash
+kill [process_id]
+~~~
+
+En caso de que se necesite un mayor detalle de los procesos usamos `top`
+
+Existen casos en lo cuales se desean traer procesos en segundo plano a primer plano. Para ver los comandos que estan en segundo plano y detenidos usamos `jobs`
+
+Conociendo el numero de trabajo (este es distinto al pid) y traerlo a primer plano (foreground) usamos el comando
+~~~bash
+fg [job_number]
+~~~
+
+Para hacer lo contrario (de primer a segundo plano) usamos bg
+
+__NOTA__: Para poder realizar todo esto los procesos deben de estar pausados, es decir, se preciono CTRL+Z para pausarlos, de esta forma tambien se mostraran al ejecutar `jobs`
+
+Para poder ejecutar un comando dentro de otro comando podemos usar $
+~~~bash
+comando1 $(comando2)
+~~~
