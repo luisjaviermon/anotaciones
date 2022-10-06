@@ -47,7 +47,11 @@ git config --global [configuracion] "[valor]"
 ### Historial de cambios
 Para ver los cambios hechos en una seccion en especifico usamos el comando `git log`
 ~~~bash
+#Caracteristicas generales de los commits
 git log [archivo]
+
+#Mostrando las caracteristicas especificas de los commits
+git log --stat [archivo] 
 ~~~
 
 __NOTA__: El primer registro que arroja el comando es el cambio mas reciente
@@ -58,4 +62,44 @@ Para ver los cambios entre las ultimas dos versiones se usa el comando `git show
 Si se desea comparar entre dos versiones arbitrarias se usa `git diff`
 ~~~bash
 git diff [versionOriginal] [versionMasNueva]
+~~~
+
+### Estados de un repo
+Un repo, durante el proceso de cambios se pasa por ciertas fases:
+  
+  - Untracked: En esta fase el archivo tiene cambior realizados, pero aun no estan dentro de la base de datos.
+  
+  - staged/tracking: En esta fase los cabios estan tomados en cuenta, pero no estan registrados en la base de datos, si no estan almacenados dentro de memoria RAM. Se llega a esta fase al ejecutar el comando `git add`
+
+  - almacenado: En esta fase estan confirmados los datos y se encuentran registrados en la base de datos con un numero de identificación. A esta fase se llega al momento de usar el comando `git commit`
+
+Como elemento final, es posible regresar a cierto momento antes del cambio y estar de nuevo en la fase de untracked se usa el comando `git checkout`
+
+![FasesGit](./img/fasesGit.webp)
+
+### Ramas
+Una rama es un conjunto de cambios dentro de la base que estan uno delante de otro, generando un historial de cambios. Al momento de crear un repo se genera una rama por defecto (rama master).
+
+__NOTA__: Al cambio mas actual dentro de cualquier rama se llama HEAD
+
+Es posible tener mas de una rama dentro del mismo repositorio, los cuales se pueden desarrollar de manera paralela una de otra. En caso de que se desee fusionar una o mas ramas se hace con el comando `merge`. Algo muy importante a considerar es que se debe de tener un control dentro de las ramas, ya que en si dos de ellas trabajan en los mismos archivos, puede sobrescribir el contenido de estos; A este suceso se le llama __Conflictos__.
+
+![ramasGit](./img/ramas.webp)
+
+Para poder regresar a cierto commit se usa el comando `reset`
+~~~bash
+#Reinicio duro: Se van a eliminar tanto los commits posteriores como los cambios dentro de stage
+git reset --hard [identificadorCommit] 
+
+#Reinicio suave: Retorna al commit deseado pero manteniendo los cambios en stage
+git reset --soft [identificadorCommit]  
+~~~
+
+Para solo regresar y ver el estado de un archivo en la rama, pero sin eliminar los demas commits se usa `checkout`
+~~~bash
+#Ir a un checkout anterior
+git checkout [identificadorCommit]
+
+#Regresar al commit mas actual 
+git checkout master
 ~~~
