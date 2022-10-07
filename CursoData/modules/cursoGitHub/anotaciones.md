@@ -84,7 +84,7 @@ __NOTA__: Al cambio mas actual dentro de cualquier rama se llama HEAD
 
 Es posible tener mas de una rama dentro del mismo repositorio, los cuales se pueden desarrollar de manera paralela una de otra. En caso de que se desee fusionar una o mas ramas se hace con el comando `merge`. Algo muy importante a considerar es que se debe de tener un control dentro de las ramas, ya que en si dos de ellas trabajan en los mismos archivos, puede sobrescribir el contenido de estos; A este suceso se le llama __Conflictos__.
 
-![ramasGit](./img/ramas.webp)
+![ramasGit](./img/ramas.webp "Ejemplo de multiples ramas dentro de git")
 
 Para poder regresar a cierto commit se usa el comando `reset`
 ~~~bash
@@ -103,3 +103,14 @@ git checkout [identificadorCommit]
 #Regresar al commit mas actual 
 git checkout master
 ~~~
+
+### Repositorio remoto
+Este es un repositorio en el cual existen muchos colaboradores quienes realizan cambios o añaden nuevos elementos y funcionalidades. Este repositorio se encuentra en un servidor en especifico, pero en el cual se puede acceder de forma remota; Para poder empezar a trabajar en este se usa el comando `git clone`. Al clonar este repo se podran hacer modificaciones como se ha visto en el caso de un repo local, pero para poder hacer que los commits se reflejen para todos los integrantes se debe de usar un comando adicional, el cual es `git push`.
+
+![FlujoFetchMerge](./img/flujoDeTrabajoFetchMerge.png "Actualizacion de  repo usando fetch y merge")
+
+En el caso de que se desee actualizar la copia local del repo con los ultimos commits que se han hecho por los demas se requiere de dos comandos. Primero se necesitan descargar estos cambios dentro del repo local (la carpeta .git) usando el comando `git fetch`. Ya descargados los commits, se fusionan con el repositorio local para ver dentro del directorio de trabajo estos cambios, para lo cual usamos el comando `git merge`
+
+__NOTA__: Existe un comando el cual realiza las mismas actividades que los dos anteriores, el cual es `git pull`.
+
+![FlujoFetchMerge](./img/flujoDeTrabajoPull.png "Actualizacion de repo usando pull")
